@@ -22,10 +22,17 @@ class CompaniesController < ApplicationController
   end
 
   def update
+    if @company.update(company_params)
+      redirect_to companies_path
+    end
 
   end
 
   def destroy
+    if @company.destroy
+    redirect_to companies_path
+  end
+
 
   end
 
@@ -36,4 +43,7 @@ private
     @company = Company.find(params[:id])
   end
 
+  def company_params
+    params.require(:company).permit(:name, :suffix, :catch_phrase, :email, :start_date, :industry)
+  end
 end
