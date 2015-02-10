@@ -2,20 +2,20 @@ The goal of this exercise is to experiment with a belongs_to and has_many both i
 
 ```
 
-bundle
-rake db:create db:migrate db:seed
+√ bundle
+√ rake db:create db:migrate db:seed
 
 ```
 
-The models need to be edited to explain associations.
+√ The models need to be edited to explain associations.
 
-Companies, Locations, Reviews, and Products.
+√ Companies, Locations, Reviews, and Products.
 
-Companies have many Locations and Products.
+√ Companies have many Locations and Products.
 
-Products have many reviews.
+√ Products have many reviews.
 
-Use boostrap but don't worry about Footer or Navbar.
+Use bootstrap but don't worry about Footer or Navbar.
 
 
 
@@ -32,52 +32,63 @@ For Example:
 set a variable called companies = to all the Companies.
   companies = Company.all
 
-1. set a variable called products = to all the Products ordered by name.
+√ 1. set a variable called products = to all the Products ordered by name.
 
   products = Product.order(:name)
 
-2. set a variable called locations = to all the Locations ordered by street_name.
+√ 2. set a variable called locations = to all the Locations ordered by street_name.
 
+  locations = Location.order(:street_name)
 
-3. set a variable called reviews = to all the Reviews ordered by rating.
+√ 3. set a variable called reviews = to all the Reviews ordered by rating.
 
+reviews = Review.order(:rating)
 
-4. set a variable called company = to the Company with an ID of 10.
+√ 4. set a variable called company = to the Company with an ID of 10.
 
+company = Company.find(10)
 
-5. select all of the products that belong to that company.
+√ 5. select all of the products that belong to that company.
 
+  company.products
 
-6. select all of the locations that belong to that company.
+√ 6. select all of the locations that belong to that company.
 
+  company.locations
 
-7. select the first product that belongs to that company.
+√ 7. select the first product that belongs to that company.
 
+  company.products.first
 
-8. select all the reviews that belong to that product.
+√ 8. select all the reviews that belong to that product.
 
+  company.products.first.reviews
 
-9. select all the reviews that belong to the product with id of 1.
+√ 9. select all the reviews that belong to the product with id of 1.
 
+  company.products.find(1).reviews
 
-10. update each product's rating to 0.
+√ 10. update each reviews's rating to 0.
 
+  company.products.each {|product| product.reviews.each {|x| x.update(rating: 0)}}
 
-11. select all the reviews with a rating of greater than 5.  
+√ 11. select all the reviews with a rating of greater than 5.  
     Review.where("rating  > 5")
 
-12. select all the companies with a start date before 12/12/2012.  
+√ 12. select all the companies with a start date before 12/12/2012.  
     Company.where(['start_date < ?', '12/12/2012'])
 
-13. How many are there?
+√ 13. How many are there?
 
+  15
 
-14. select all the products with a price greater than 50. Product.where("? > ?")
+√ 14. select all the products with a price greater than 50. Product.where("? > ?")
 
+  Product.where("price > 50")
 
-15. select review with id of 10 and return the product it belongs to.
+√ 15. select review with id of 10 and return the product it belongs to.
 
-
+  Review.find(10).product
 
 ## View Stories
 
