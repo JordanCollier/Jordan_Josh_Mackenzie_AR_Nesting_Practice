@@ -92,8 +92,8 @@ company = Company.find(10)
 
 ## View Stories
 
-Create an index page for companies that lists all companies and attributes in a table, with a link to that companies show page from it's name.
-(Set root to this page 'companies#index')
+√ Create an index page for companies that lists all companies and attributes in a table, with a link to that companies show page from it's name.
+√ (Set root to this page 'companies#index')
 
 There are no views setup. Root is set to standard rails page.
 
